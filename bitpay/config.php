@@ -1,11 +1,11 @@
 <?php
 
-$storeURL = 'http://fde.minethings.com/ecwid';
-$storeId = '1671204';
-$apiKey = 'AUzmyMT1pbTdYHuqcHmD71LGlrnDSa30Yb061h6jTgw';
+$storeURL = '';
+$storeId = '';
+$apiKey = '';
 $speed = 'high'; // can be 'high', 'medium' or 'low'
-$login = 'somethingrandom123123123123';
-$hashValue = '2lk3n2oi3f';
+$login = '';
+$hashValue = '';
 
 // add trailing slash to storeURL
 $storeURL = preg_replace('#([^\/])$#', '\1/', $storeURL);
