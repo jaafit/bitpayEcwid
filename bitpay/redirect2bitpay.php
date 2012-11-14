@@ -14,7 +14,7 @@ $posData = array($_POST['x_amount'], // put here to preserve exact digits
 		$_POST['x_invoice_num']);
 $options = array(
 	'apiKey' => $apiKey,
-	'notificationURL' => $storeURL.'bitpay/callback.php',
+	'notificationURL' => $callbackURL,
 	'transactionSpeed' => $speed,
 	'fullNotifications' => true,
 	'itemDesc' => $_POST['x_description'],
@@ -28,15 +28,14 @@ $options = array(
 	'buyerZip' => $_POST['x_zip'],
 	'buyerCountry' => $_POST['x_country'],
 	);		
+
 $invoice = bpCreateInvoice(NULL, $_POST['x_amount'], $posData, $options);
 if (isset($invoice['error'])) {
-	debuglog($invoice['error']);
+	debuglog($options);
+	debuglog($invoice);
 	print 'Error creating invoice';
 	die;
 }
-
-debuglog($options);
-debuglog($invoice);
 
 // redirect to bitpay
 header('Location: '.$invoice['url']);

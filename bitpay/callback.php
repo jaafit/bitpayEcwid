@@ -6,7 +6,7 @@ require 'bp_lib.php';
 $notice = bpVerifyNotification($apiKey);
 
 if (isset($notice['error'])) {
-	debuglog($notice['error']);
+	debuglog($notice);
 	die;
 }
 
@@ -26,21 +26,25 @@ $datatopost = array (
 	"x_amount" => $x_amount,
 	"x_MD5_Hash" => $x_MD5_Hash,
 	);
-debuglog($datatopost);
 
 switch($notice['status']){
 	case 'completed':
 	case 'confirmed':
-		$url = 'http://app.ecwid.com/authorizenet/'.$storeId.'/';
-		debuglog($url);
+		$url = 'http://app.ecwid.com/authorizenet/'.$storeId;
 		$ch = curl_init($url);
  
 		curl_setopt($ch, CURLOPT_POST, 1);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $datatopost);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		 
+		
 		$response = curl_exec($ch);
-		debuglog($response);
+		if ($response === false){
+			debuglog('request to ecwid.com failed');
+			debuglog($url);
+			debuglog($notice);
+			debuglog($datatopost);
+			debuglog(curl_error($ch));
+		}
 				
 		curl_close($ch);
 		break;
