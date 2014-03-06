@@ -36,7 +36,7 @@ In your Ecwid control panel:
 		/* bitpay checkout image */
 		img.defaultCCImage {
 			padding: 25px 263px 0px 0px; 
-			background: url('http://fde.minethings.com/ecwid/bitpay/bitcoin25.png'); 
+			background: url('https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png'); 
 			background-size:auto; 
 			background-repeat:no-repeat;
 			width:0px; 
