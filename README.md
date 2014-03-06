@@ -62,5 +62,5 @@ The official BitPay API documentation should always be your first reference for 
 
 Version
 -------
-Bitpay plugin version 1.0
-Tested against Ecwid version 13.0.1629
+- Bitpay plugin version 1.0
+- Tested against Ecwid version 13.0.1629
