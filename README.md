@@ -1,4 +1,4 @@
-©2011,2012,2013,2014 BITPAY, INC.
+<strong>©2011-2014 BITPAY, INC.</strong>
 
 Permission is hereby granted to any person obtaining a copy of this software and associated documentation for use and/or modification in association with the bitpay.com service.
 
@@ -64,3 +64,4 @@ Version
 -------
 - Bitpay plugin version 1.0
 - Tested against Ecwid version 13.0.1629
+- Added new HTTP header for version tracking
