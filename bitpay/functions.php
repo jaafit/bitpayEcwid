@@ -2,14 +2,7 @@
 
 function debuglog($contents)
 {
-	$file = 'log.txt';
-	file_put_contents($file, date('m-d H:i:s').": ", FILE_APPEND);
-	if (is_array($contents))
-		file_put_contents($file, var_export($contents, true)."\n", FILE_APPEND);		
-	else if (is_object($contents))
-		file_put_contents($file, json_encode($contents)."\n", FILE_APPEND);
-	else
-		file_put_contents($file, $contents."\n", FILE_APPEND);
+	error_log($contents);
 }
 
 function postToEcwid($notice)
@@ -46,9 +39,6 @@ function postToEcwid($notice)
 			$response = curl_exec($ch);
 			if ($response === false){
 				debuglog('request to ecwid.com failed');
-				debuglog($url);
-				debuglog($notice);
-				debuglog($datatopost);
 				debuglog(curl_error($ch));
 			}
 					
