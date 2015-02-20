@@ -1,4 +1,6 @@
-<strong>©2011-2014 BITPAY, INC.</strong>
+<strong>©2011-2015 BITPAY, INC.</strong>
+
+The MIT License
 
 Permission is hereby granted to any person obtaining a copy of this software and associated documentation for use and/or modification in association with the bitpay.com service.
 
