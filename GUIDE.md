@@ -1,4 +1,5 @@
-# Using the BitPay plugin for Prestashop
+# Using the BitPay plugin for ECWID
+
 ## Prerequisites
 You must have a BitPay merchant account to use this plugin.  It's free to [sign-up for a BitPay merchant account](https://bitpay.com/start).
 
