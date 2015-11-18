@@ -1,6 +1,9 @@
 # Using the BitPay plugin for ECWID
 
 ## Prerequisites
+
+* Last Version Tested: 13.0.1629
+
 You must have a BitPay merchant account to use this plugin.  It's free to [sign-up for a BitPay merchant account](https://bitpay.com/start).
 
 
