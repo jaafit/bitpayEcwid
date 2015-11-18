@@ -11,6 +11,8 @@ Bitcoin payment plugin for Ecwid using the bitpay.com service.
 
 ## Quick Start Guide
 
+* Last Version Tested: 13.0.1629
+
 To get up and running with our plugin quickly, see the GUIDE here: https://github.com/bitpay/ecwid-plugin/blob/master/GUIDE.md
 
 
