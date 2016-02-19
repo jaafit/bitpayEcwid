@@ -27,15 +27,27 @@ The official BitPay API documentation should always be your first reference for 
 - Verify that the merchants web server is not blocking POSTs from servers it may not recognize. Double check this on the firewall as well, if one is being used.
 - Use the logging functionality to log errors during development. If you contact BitPay support, they will ask to see the log file to help diagnose any problems.
 - Check the version of this plugin against the official repository to ensure you are using the latest version. Your issue might have been addressed in a newer version of the library.
-- If all else fails, send an email describing your issue in detail to support@bitpay.com
 
+## Support
+ 
+**BitPay Support:**
+
+* [GitHub Issues](https://github.com/bitpay/ecwid-plugin/issues)
+  * Open an issue if you are having issues with this plugin.
+* [Support](https://help.bitpay.com/)
+  * BitPay merchant support documentation
+
+**Ecwid Support**
+
+* [Homepage](https://www.ecwid.com/)
+* [Documentation](https://help.ecwid.com/)
+* [Support](https://help.ecwid.com/customer/portal/emails/new)
 
 ## Version History
 
 - Bitpay plugin version 1.0
 - Tested against Ecwid version 13.0.1629
 - Added new HTTP header for version tracking
-
 
 ## License
 
