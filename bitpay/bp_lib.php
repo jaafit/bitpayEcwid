@@ -1,5 +1,22 @@
 <?php
 
+/**
+ * ©2011,2012,2013,2014 BITPAY, INC.
+ * 
+ * Permission is hereby granted to any person obtaining a copy of this software
+ * and associated documentation for use and/or modification in association with
+ * the bitpay.com service.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ * 
+ */
+
 require_once 'bp_options.php';
 
 function bpCurl($url, $apiKey, $post = false) {
@@ -19,6 +36,7 @@ function bpCurl($url, $apiKey, $post = false) {
 		'Content-Type: application/json',
 		"Content-Length: $length",
 		"Authorization: Basic $uname",
+		'X-BitPay-Plugin-Info: ecwid033114',
 		);
 
 	curl_setopt($curl, CURLOPT_PORT, 443);
@@ -108,7 +126,12 @@ function bpVerifyNotification($apiKey = false) {
 		return array('error' => 'authentication failed (bad hash)');
 	$json['posData'] = $posData['posData'];
 		
-	return $json;
+	if (!array_key_exists('id', $json))
+        {
+            return 'Cannot find invoice ID';
+        }
+
+        return bpGetInvoice($json['id'], $apiKey);
 }
 
 // $options can include ('apiKey')
@@ -122,7 +145,10 @@ function bpGetInvoice($invoiceId, $apiKey=false) {
 		return array('error' => $response); 
 	//decode posData
 	$response['posData'] = json_decode($response['posData'], true);
-	$response['posData'] = $response['posData']['posData'];
+	if($bpOptions['verifyPos'])
+        {
+            $response['posData'] = $response['posData']['posData'];
+        }
 
 	return $response;	
 }

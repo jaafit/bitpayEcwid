@@ -32,8 +32,7 @@ $options = array(
 
 $invoice = bpCreateInvoice(NULL, $_POST['x_amount'], $posData, $options);
 if (isset($invoice['error'])) {
-	debuglog($options);
-	debuglog($invoice);
+	debuglog('Error creating invoice');
 	print 'Error creating invoice';
 	die;
 }
